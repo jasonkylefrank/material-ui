@@ -19,7 +19,7 @@ If you wish to customize the theme, you need to use the `MuiThemeProvider` compo
 Changing the theme configuration variables is the most effective way to match Material-UI to your needs. The following sections cover the most important theme variables:
 
 - [Palette](#palette)
-- [Type (light / dark theme)](#type-light-dark-theme-)
+- [Type (light / dark theme)](#type-light-dark-theme)
 - [Typography](#typography)
 - [Other variables](#other-variables)
 - [Custom variables](#custom-variables)
@@ -278,7 +278,7 @@ When the configuration variables aren't powerful enough, you can take advantage 
 const theme = createMuiTheme({
   overrides: {
     MuiButton: { // Name of the component ⚛️ / style sheet
-      root: { // Name of the rule
+      text: { // Name of the rule
         color: 'white', // Some CSS
       },
     },
@@ -288,7 +288,7 @@ const theme = createMuiTheme({
 
 {{"demo": "pages/customization/themes/OverridesCss.js"}}
 
-The list of these customization points for each component is documented under the **Component API** section. For instance, you can have a look at the [Button](/api/button/#css-api). Alternatively, you can always have a look at the [implementation](https://github.com/mui-org/material-ui/blob/master/packages/material-ui/src/Button/Button.js).
+The list of these customization points for each component is documented under the **Component API** section. For instance, you can have a look at the [Button](/api/button/#css). Alternatively, you can always have a look at the [implementation](https://github.com/mui-org/material-ui/blob/master/packages/material-ui/src/Button/Button.js).
 
 ### Properties
 
@@ -316,9 +316,13 @@ You might need to access the theme variables inside your React components. Let's
 
 ## Nesting the theme
 
-The theming solution is very flexible, as you can nest multiple theme providers. This can be really useful when dealing with different area of your application that have distinct appearance from each other.
+The theming solution is very flexible, as [you can nest](/css-in-js/advanced/#theme-nesting) multiple theme providers. This can be really useful when dealing with different area of your application that have distinct appearance from each other.
 
-{{"demo": "pages/customization/themes/Nested.js"}}
+{{"demo": "pages/customization/themes/ThemeNesting.js"}}
+
+The inner theme will **override** the outer theme. You can extend the outer theme by providing a function:
+
+{{"demo": "pages/customization/themes/ThemeNestingExtend.js"}}
 
 #### A note on performance
 
