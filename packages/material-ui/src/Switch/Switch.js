@@ -24,7 +24,7 @@ export const styles = theme => ({
     height: 20,
     borderRadius: '50%',
   },
-  /* Styles applied the icon element component if `checked={true}`. */
+  /* Styles applied to the icon element component if `checked={true}`. */
   iconChecked: {
     boxShadow: theme.shadows[2],
   },
